@@ -1,0 +1,9 @@
+- Modo oscuro ✅
+- Formulario
+    - Enviar correo con los datos del cliente ✅
+    - Animacion cuando se envie el Formulario ✅
+    - ¿Base de datos?
+- Nueva paleta de colores
+- Relleno
+- Enseñar vista de cliente y tutorial
+- En otro apartado destacar los puntos del programa
