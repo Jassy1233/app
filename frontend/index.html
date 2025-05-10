@@ -10,7 +10,7 @@
     <script src="./Src/main.js" defer></script>
     <script src="./Src/bars.js" defer></script>
     <script src="./Src/slide.js" defer></script>
-    <script src="./Src/type.js" defer></script>
+    <!--<script src="./Src/type.js" defer></script>-->
     <script src="./Src/form.js" defer></script>
     <!--Librerias JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -18,188 +18,200 @@
 
 <body>
     <!--Barra de navegación-->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="https://inforlistin.com" target="_blank" class="logo">Inforlistin</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#sec1">¿Por qué elegirnos?</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><button id="oscuro">🌙</button></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="main-wrapper">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="https://inforlistin.com" target="_blank" class="logo">Inforlistin</a>
 
-    <!--Seccion Hero-->
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 id="text"></h1>
+                <!-- Botón móvil -->
+                <button class="mobile-menu-btn">☰</button>
+
+                <ul class="nav-links">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#sec1">¿Por qué elegirnos?</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><button id="oscuro">🌙</button></li>
+                </ul>
             </div>
-            <div class="tablet-mockup">
-                <video autoplay muted loop playsinline>
-                    <source src="./IMG/tablet.mp4" type="video/mp4" />
-                    Tu navegador no soporta video HTML5.
-                </video>
+        </nav>
 
-            </div>
-            <button class="indicador" id="scrollBtn1">▼</button>
-        </div>
-    </section>
-
-    <!--Seccion 1-->
-    <section id="sec1">
-        <h2 id="texto">¿Por qué elegirnos?</h2>
-        <div class="container">
-            <div class="content">
-                <p class="slide">✔️ Ahorra tiempo y evita errores manuales</p>
-                <p class="slide">✔️ Control total de tus reservas</p>
-                <p class="slide">✔️ Interfaz intuitiva, sin curva de aprendizaje</p>
-                <p class="slide">✔️ ¿No te gustaria saber la opinion de tus clientes?</p>
-            </div>
-            <div class="image-placeholder">
-                <div class="bar" id="bar1" data-value="80"></div>
-                <div class="bar" id="bar2" data-value="65"></div>
-                <div class="bar" id="bar3" data-value="90"></div>
-                <div class="bar" id="bar4" data-value="70"></div>
-            </div>
-        </div>
-        <button class="btn" id="scrollBtn2">Sigue informándote 🔎</button>
-    </section>
-
-    <!--Seccion 2-->
-    <section id="sec2">
-
-        <section class="testimonial-section">
-            <div class="testimonial-heading">
-                <h2 id="texto">Opiniones de nuestros clientes</h2>
-                <p id="texto">Restaurantes que ya están mejorando su gestión con nosotros.</p>
-            </div>
-
-            <div class="testimonial-container">
-                <div class="testimonial-track">
-                    <!--Testimonios-->>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga.jpg" alt="Cliente 1" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">La Parrilla</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Reservar nunca fue tan fácil. Nuestros turnos están
-                            organizados
-                            y eficientes."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga2.jpg" alt="Cliente 2" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Café Aroma</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Ideal para manejar reservas. La app es clara y
-                            moderna."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga3.jpg" alt="Cliente 3" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Bar La Esquina</h3>
-                        <div class="stars">★★★★☆</div>
-                        <p class="testimonial-content" id="texto">"Gran herramienta, sobre todo para fines de semana."
-                        </p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga4.jpg" alt="Cliente 4" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Trattoria Nápoli</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Mucho más orden con las reservas online. La
-                            recomiendo."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga5.jpg" alt="Cliente 5" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Taberna Verde</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Desde que la usamos hemos mejorado la puntualidad de
-                            los
-                            clientes."</p>
-                    </div>
-                    <!--Testimonios duplicados-->>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga.jpg" alt="Cliente 1" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">La Parrilla</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Reservar nunca fue tan fácil. Nuestros turnos están
-                            organizados
-                            y eficientes."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga2.jpg" alt="Cliente 2" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Café Aroma</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Ideal para manejar reservas. La app es clara y
-                            moderna."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga3.jpg" alt="Cliente 3" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Bar La Esquina</h3>
-                        <div class="stars">★★★★☆</div>
-                        <p class="testimonial-content" id="texto">"Gran herramienta, sobre todo para fines de semana."
-                        </p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga4.jpg" alt="Cliente 4" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Trattoria Nápoli</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Mucho más orden con las reservas online. La
-                            recomiendo."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="./IMG/descarga5.jpg" alt="Cliente 5" class="testimonial-avatar">
-                        <h3 class="testimonial-author" id="texto">Taberna Verde</h3>
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-content" id="texto">"Desde que la usamos hemos mejorado la puntualidad de
-                            los
-                            clientes."</p>
-                    </div>
+        <!--Seccion Hero-->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="text">App Reservas</h1>
                 </div>
-                <button class="btn" id="scrollBtn3">Contáctanos 📞</button>
+                <div class="tablet-mockup">
+                    <video autoplay muted loop playsinline>
+                        <source src="./IMG/tablet.mp4" type="video/mp4" />
+                        Tu navegador no soporta video HTML5.
+                    </video>
 
+                </div>
+                <button class="indicador" id="scrollBtn1">▼</button>
             </div>
         </section>
-    </section>
 
-    <!--Seccion 3-->
-    <section id="sec3">
-        <div class="form-card">
-            <h2 id="texto">¿Listo para optimizar tus reservas?</h2>
-            <p class="subtitle" id="texto">Déjanos tus datos y te contactaremos en <strong>menos de 24h</strong></p>
-            <form action="https://formsubmit.co/meseguer318@gmail.com" method="POST" id="miFormulario">
+        <!--Seccion 1-->
+        <section id="sec1">
+            <h2 id="texto">¿Por qué elegirnos?</h2>
+            <div class="container">
+                <div class="content">
+                    <p class="slide">✔️ Ahorra tiempo y evita errores manuales</p>
+                    <p class="slide">✔️ Control total de tus reservas</p>
+                    <p class="slide">✔️ Interfaz intuitiva, sin curva de aprendizaje</p>
+                    <p class="slide">✔️ ¿No te gustaria saber la opinion de tus clientes?</p>
+                </div>
+                <div class="image-placeholder">
+                    <div class="bar" id="bar1" data-value="80"></div>
+                    <div class="bar" id="bar2" data-value="65"></div>
+                    <div class="bar" id="bar3" data-value="90"></div>
+                    <div class="bar" id="bar4" data-value="70"></div>
+                </div>
+            </div>
+            <button class="btn" id="scrollBtn2">Sigue informándote 🔎</button>
+        </section>
 
-                <!-- Campos del formulario -->
-                <div class="input-group">
-                    <input type="text" name="Nombre" placeholder="Nombre completo" class="input-field" required>
+        <!--Seccion 2-->
+        <section id="sec2">
+
+            <section class="testimonial-section">
+                <div class="testimonial-heading">
+                    <h2 id="texto">Opiniones de nuestros clientes</h2>
+                    <p id="texto">Restaurantes que ya están mejorando su gestión con nosotros.</p>
                 </div>
 
-                <div class="input-group">
-                    <input type="email" name="Email" placeholder="Correo electrónico" class="input-field" required>
+                <div class="testimonial-container">
+                    <div class="testimonial-track">
+                        <!--Testimonios-->
+                        <div class="testimonial">
+                            <img src="./IMG/descarga.jpg" alt="Cliente 1" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">La Parrilla</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Reservar nunca fue tan fácil. Nuestros turnos
+                                están
+                                organizados
+                                y eficientes."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga2.jpg" alt="Cliente 2" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Café Aroma</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Ideal para manejar reservas. La app es clara y
+                                moderna."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga3.jpg" alt="Cliente 3" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Bar La Esquina</h3>
+                            <div class="stars">★★★★☆</div>
+                            <p class="testimonial-content" id="texto">"Gran herramienta, sobre todo para fines de
+                                semana."
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga4.jpg" alt="Cliente 4" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Trattoria Nápoli</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Mucho más orden con las reservas online. La
+                                recomiendo."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga5.jpg" alt="Cliente 5" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Taberna Verde</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Desde que la usamos hemos mejorado la puntualidad
+                                de
+                                los
+                                clientes."</p>
+                        </div>
+                        <!--Testimonios duplicados-->
+                        <div class="testimonial">
+                            <img src="./IMG/descarga.jpg" alt="Cliente 1" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">La Parrilla</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Reservar nunca fue tan fácil. Nuestros turnos
+                                están
+                                organizados
+                                y eficientes."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga2.jpg" alt="Cliente 2" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Café Aroma</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Ideal para manejar reservas. La app es clara y
+                                moderna."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga3.jpg" alt="Cliente 3" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Bar La Esquina</h3>
+                            <div class="stars">★★★★☆</div>
+                            <p class="testimonial-content" id="texto">"Gran herramienta, sobre todo para fines de
+                                semana."
+                            </p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga4.jpg" alt="Cliente 4" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Trattoria Nápoli</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Mucho más orden con las reservas online. La
+                                recomiendo."</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="./IMG/descarga5.jpg" alt="Cliente 5" class="testimonial-avatar">
+                            <h3 class="testimonial-author" id="texto">Taberna Verde</h3>
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-content" id="texto">"Desde que la usamos hemos mejorado la puntualidad
+                                de
+                                los
+                                clientes."</p>
+                        </div>
+                    </div>
                 </div>
+                                    <button class="btn" id="scrollBtn3">Contáctanos 📞</button> 
 
-                <div class="input-group">
-                    <input type="tel" name="Telefono" placeholder="Teléfono" class="input-field">
-                </div>
+            </section>
+        </section>
 
-                <div class="input-group">
-                    <select name="Tipo_negocio" class="input-field" required>
-                        <option value="" disabled selected>Tipo de negocio</option>
-                        <option value="Restaurante">Restaurante</option>
-                        <option value="Cafetería">Cafetería</option>
-                        <option value="Bar">Bar</option>
-                    </select>
-                </div>
+        <!--Seccion 3-->
+        <section id="sec3">
+            <div class="form-card">
+                <h2 id="texto">¿Listo para optimizar tus reservas?</h2>
+                <p class="subtitle" id="texto">Déjanos tus datos y te contactaremos en <strong>menos de 24h</strong></p>
+                <form action="https://formsubmit.co/meseguer318@gmail.com" method="POST" id="miFormulario">
 
-                <div class="input-group">
-                    <input type="text" name="Observaciones" placeholder="Observaciones" class="input-field">
-                </div>
+                    <!-- Campos del formulario -->
+                    <div class="input-group">
+                        <input type="text" name="Nombre" placeholder="Nombre completo" class="input-field" required>
+                    </div>
 
-                <!-- Botón con feedback -->
-                <button type="submit" class="btn" id="submitBtn">Solicitar demo</button>
+                    <div class="input-group">
+                        <input type="email" name="Email" placeholder="Correo electrónico" class="input-field" required>
+                    </div>
 
-            </form>
-        </div>
-    </section>
+                    <div class="input-group">
+                        <input type="tel" name="Telefono" placeholder="Teléfono" class="input-field">
+                    </div>
+
+                    <div class="input-group">
+                        <select name="Tipo_negocio" class="input-field" required>
+                            <option value="" disabled selected>Tipo de negocio</option>
+                            <option value="Restaurante">Restaurante</option>
+                            <option value="Cafetería">Cafetería</option>
+                            <option value="Bar">Bar</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="Observaciones" placeholder="Observaciones" class="input-field">
+                    </div>
+
+                    <!-- Botón con feedback -->
+                    <button type="submit" class="btn" id="submitBtn">Solicitar demo</button>
+
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

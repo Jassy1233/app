@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Slide de los botones : 
 
     //Scroll del indicador
-    document.getElementById('scrollBtn1').addEventListener('click', function() {
-        document.getElementById('sec1').scrollIntoView({ behavior: 'smooth'});
+    document.getElementById('scrollBtn1').addEventListener('click', function () {
+        document.getElementById('sec1').scrollIntoView({ behavior: 'smooth' });
     })
 
     // Scroll de la seccion 2 :
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Modo oscuro : 
 
-    document.getElementById('oscuro').addEventListener('click', function() {
+    document.getElementById('oscuro').addEventListener('click', function () {
         //para el body
         document.body.classList.toggle('modoOscuro')
 
@@ -30,9 +30,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
-    if(localStorage.getItem('modoOscuro') === 'true'){
+    if (localStorage.getItem('modoOscuro') === 'true') {
         document.body.classList.add('oscuro')
         document.querySelector('nav').classList.add('modoOscuro')
     }
+
+    //Boton movil
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', function (e) {
+        const navLinks = document.querySelector('.nav-links');
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+
+        if (!mobileBtn.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Cerrar menú al seleccionar un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
 
 })
