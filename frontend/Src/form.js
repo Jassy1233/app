@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
       email: formData.get('Email'),
       telefono: formData.get('Telefono'),
       negocio: formData.get('Tipo_negocio'),
-      observaciones: formData.get('Observaciones')
+      observaciones: formData.get('Observaciones'),
+      local: formData.get('Local')
     };
 
     try {

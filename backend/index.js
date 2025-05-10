@@ -10,16 +10,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors())
 app.use(bodyParser.json())
 
-//const ipLog = new Map()
+const ipLog = new Map()
 
 app.post('/enviar', async (req, res) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 
- //   if (ipLog.has(ip) && Date.now() - ipLog.get(ip) < 24 * 60 * 60 * 1000) {
-   //     return res.status(429).json({ mensaje: 'Tienes que esperar 24 horas antes de enviar un nuevo correo' })
-    //}
+    if (ipLog.has(ip) && Date.now() - ipLog.get(ip) < 24 * 60 * 60 * 1000) {
+        return res.status(429).json({ mensaje: 'Tienes que esperar 24 horas antes de enviar un nuevo correo' })
+    }
 
-    const { nombre, email, observaciones, telefono, negocio } = req.body
+    const { nombre, email, observaciones, telefono, negocio, local } = req.body
 
     try {
         const transporter = nodemailer.createTransport({
@@ -33,11 +33,11 @@ app.post('/enviar', async (req, res) => {
         await transporter.sendMail({
             from: email,
             to: 'meseguer318@gmail.com',
-            subject: `Consulta de ${nombre}`,
-            text: `Nombre: ${nombre}\n Email: ${email} \n Telefono ${telefono} \n Tipo de negocio: ${negocio} \n Observaciones: ${observaciones}`
+            subject: `Nuevo cliente reservas : ${nombre}`,
+            text: `Nombre: ${nombre} \n Nombre del local ${local}\n Email: ${email} \n Telefono ${telefono} \n Tipo de negocio: ${negocio} \n Observaciones: ${observaciones}`
         });
 
-       // ipLog.set(ip, Date.now())
+       ipLog.set(ip, Date.now())
         res.json({ mensaje: 'Mensaje enviado correctamente' })
     } catch (error){
         console.log('Error al enviar el correo', error)
@@ -47,5 +47,5 @@ app.post('/enviar', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en http://localhost:${PORT}`)
-   // console.log(ipLog)
+   console.log(ipLog)
 })

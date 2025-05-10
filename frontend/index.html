@@ -10,13 +10,18 @@
     <script src="./Src/main.js" defer></script>
     <script src="./Src/bars.js" defer></script>
     <script src="./Src/slide.js" defer></script>
+    <script src="./Src/cockies.js" defer></script>
     <!--<script src="./Src/type.js" defer></script>-->
     <script src="./Src/form.js" defer></script>
     <!--Librerias-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    
     <!--Barra de navegación-->
     <div class="main-wrapper">
         <nav class="navbar">
@@ -28,25 +33,43 @@
 
                 <ul class="nav-links">
                     <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#sec1">¿Por qué elegirnos?</a></li>
+                    <li><a href="#sec1">Demo</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
-                    <li><button id="oscuro">🌙</button></li>
+                    <li><button id="oscuro"><i class="fas fa-moon"></i></button></li>
                 </ul>
             </div>
         </nav>
+
+        
 
         <!--Seccion Hero-->
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 id="text">App Reservas</h1>
+                    <p id="texto">Potencia tu negocio con <strong>soluciones</strong> digitales que marcan la
+                        <strong>diferencia</strong></p>
                 </div>
-                <div class="tablet-mockup">
-                    <video autoplay muted loop playsinline>
-                        <source src="./IMG/tablet.mp4" type="video/mp4" />
-                        Tu navegador no soporta video HTML5.
-                    </video>
 
+                <!-- Contenedor principal del dispositivo -->
+                <div class="device-container">
+                    <!-- Tablet/Móvil -->
+                    <div class="tablet-mockup">
+                        <video autoplay muted loop playsinline>
+                            <source src="./IMG/tablet.mp4" type="video/mp4" />
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+
+                    <!-- Selector de dispositivo -->
+                    <div class="device-switch">
+                        <button class="switch-btn active" data-device="tablet" aria-label="Vista administrador">
+                            <i class="fas fa-tablet-alt"></i>
+                        </button>
+                        <button class="switch-btn" data-device="mobile" aria-label="Vista usuario">
+                            <i class="fas fa-mobile-alt"></i>
+                        </button>
+                    </div>
                 </div>
                 <button class="indicador" id="scrollBtn1">▼</button>
             </div>
@@ -185,6 +208,10 @@
                     </div>
 
                     <div class="input-group">
+                        <input type="text" name="Local" placeholder="Nombre del negocio" class="input-field" required>
+                    </div>
+
+                    <div class="input-group">
                         <input type="email" name="Email" placeholder="Correo electrónico" class="input-field" required>
                     </div>
 
@@ -243,10 +270,11 @@
                 </div>
             </div>
             <div class="footer-contact">
-                <p>Email: info@inforlistin.com</p>
+                <p>Email: inforlistin@inforlistin.com</p>
                 <p>Teléfono: +34 968 87 09 70</p>
                 <div class="footer-social">
-                    <a href="https://es-es.facebook.com/inforlistin.murcia/photos/" target="_blank" aria-label="Facebook">
+                    <a href="https://es-es.facebook.com/inforlistin.murcia/photos/" target="_blank"
+                        aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://x.com/inforlistin?lang=ar-x-fm" target="_blank" aria-label="Twitter">
@@ -259,6 +287,46 @@
             <p id="texto">&copy; 2025 Inforlistin. Todos los derechos reservados.</p>
         </div>
     </footer>
+       <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>🍪 Usamos cookies para mejorar tu experiencia. Puedes personalizar tu consentimiento:</p>
+        <div class="cookie-buttons">
+            <button id="accept-all" class="cookie-btn">Aceptar todas</button>
+            <button id="customize-btn" class="cookie-btn secondary">Personalizar</button>
+        </div>
+    </div>
+
+    <!-- Panel de personalización (oculto inicialmente) -->
+    <div id="customize-panel" class="cookie-customize">
+        <h3>Preferencias de cookies</h3>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" checked disabled>
+                <span>Esenciales</span>
+                <small>Necesarias para el funcionamiento del sitio</small>
+            </label>
+        </div>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" name="analytics" checked>
+                <span>Analíticas</span>
+                <small>Nos ayudan a mejorar el servicio</small>
+            </label>
+        </div>
+        
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" name="marketing">
+                <span>Marketing</span>
+                <small>Para mostrar anuncios relevantes</small>
+            </label>
+        </div>
+        
+        <button id="save-preferences" class="cookie-btn">Guardar preferencias</button>
+    </div>
+</div>
 </body>
 
 </html>

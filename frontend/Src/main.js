@@ -19,20 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modo oscuro : 
 
     document.getElementById('oscuro').addEventListener('click', function () {
-        //para el body
-        document.body.classList.toggle('modoOscuro')
+        document.body.classList.toggle('modoOscuro');
+        document.querySelector('nav').classList.toggle('modoOscuro');
 
-        //para el nav
-        const nav = document.querySelector('nav')
-        nav.classList.toggle('modoOscuro')
-
-        localStorage.setItem('darkMode', document.body.classList.contains('oscuro'))
-
-    })
+        localStorage.setItem('modoOscuro', document.body.classList.contains('modoOscuro'));
+    });
 
     if (localStorage.getItem('modoOscuro') === 'true') {
-        document.body.classList.add('oscuro')
-        document.querySelector('nav').classList.add('modoOscuro')
+        document.body.classList.add('modoOscuro');
+        document.querySelector('nav').classList.add('modoOscuro');
     }
 
     //Boton movil
@@ -58,4 +53,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    //Cambiar videos
+    document.querySelectorAll('.switch-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const mockup = document.querySelector('.tablet-mockup');
+            const video = mockup.querySelector('video');
+
+            document.querySelectorAll('.switch-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            if (this.dataset.device === 'mobile') {
+                mockup.classList.add('mobile-view');
+                video.src = './IMG/movil.mp4'; // Video en vertical
+            } else {
+                mockup.classList.remove('mobile-view');
+                video.src = './IMG/tablet.mp4'; // Video horizontal
+            }
+
+            video.load();
+            video.play();
+        });
+    });
 })

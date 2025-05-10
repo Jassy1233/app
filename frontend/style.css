@@ -278,6 +278,7 @@ header {
     border-right: none;
 }
 
+/* Contenedor Tablet (horizontal) - ESTILOS ORIGINALES */
 .tablet-mockup {
     width: auto;
     height: 400px;
@@ -288,7 +289,8 @@ header {
     background: black;
     flex-shrink: 0;
     margin-left: 2rem;
-
+    transition: all 0.4s ease; /* Añadido para transición suave */
+    position: relative; /* Necesario para el overlay */
 }
 
 .tablet-mockup video {
@@ -296,6 +298,140 @@ header {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block; /* Ajusta al contenido */
+}
+
+/* Posicionamiento del switch */
+.device-switch {
+    position: absolute;
+    right: -60px; /* Fuera del mockup */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+.tablet-mockup.mobile-view {
+    width: auto; /* Ancho más estrecho */
+    height: 550px; /* Altura mayor */
+    border: 12px solid #333;
+    border-radius: 25px;
+}
+
+.tablet-mockup.mobile-view::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+}
+
+
+/* Estilos existentes mejorados */
+.switch-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+}
+
+.switch-btn.active {
+    background: #333;
+    color: white;
+}
+
+/* Modo oscuro */
+.modoOscuro .switch-btn {
+    background: rgba(30, 30, 30, 0.9);
+    border-color: #f0f0f0;
+    color: #f0f0f0;
+}
+
+.modoOscuro .switch-btn.active {
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* Responsive */
+/* Tablet Pequeña (768px) */
+@media (max-width: 992px) {
+    .tablet-mockup {
+        height: 350px;
+    }
+    .tablet-mockup.mobile-view {
+        width: 280px;
+        height: 500px;
+    }
+}
+
+/* Móvil Grande (576px) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 1.5rem;
+    }
+    
+    .tablet-mockup {
+        height: 300px;
+        border-width: 14px;
+    }
+    
+    .tablet-mockup.mobile-view {
+        width: 250px;
+        height: 450px;
+    }
+    
+    .device-switch {
+        right: 10px;
+        top: auto;
+        bottom: -50px;
+        flex-direction: row;
+    }
+}
+
+/* Móvil Pequeño (480px) */
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .tablet-mockup {
+        height: 250px;
+        border-width: 12px;
+    }
+    
+    .tablet-mockup.mobile-view {
+        width: 220px;
+        height: 400px;
+    }
+    
+    .switch-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Móvil Muy Pequeño (360px) */
+@media (max-width: 400px) {
+    .tablet-mockup.mobile-view {
+        width: 200px;
+        height: 360px;
+    }
 }
 
 @keyframes float {
@@ -779,6 +915,140 @@ section button.btn {
   }
 }
 
+/* ================== Coockies  ================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #e0e0e0;
+  display: none; /* Oculto inicialmente */
+}
+
+.cookie-content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cookie-content p {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.cookie-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cookie-btn {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.cookie-btn.primary {
+  background: #0056b3;
+  color: white;
+  border: none;
+}
+
+.cookie-btn.secondary {
+  background: white;
+  color: #0056b3;
+  border: 1px solid #0056b3;
+}
+
+/* ----- Panel de Personalización ----- */
+.cookie-customize {
+  display: none;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.cookie-option {
+  margin-bottom: 12px;
+}
+
+.cookie-option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cookie-option input[type="checkbox"] {
+  margin: 0;
+}
+
+/* ----- Tablet (768px+) ----- */
+@media (min-width: 768px) {
+  .cookie-banner {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+  }
+
+  .cookie-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .cookie-btn {
+    width: auto;
+    padding: 8px 16px;
+  }
+}
+
+/* ----- Desktop (992px+) ----- */
+@media (min-width: 992px) {
+  .cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cookie-content p {
+    margin-bottom: 0;
+    flex: 1;
+  }
+}
+
+/* ----- Modo Oscuro ----- */
+.modoOscuro .cookie-banner {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.modoOscuro .cookie-content p {
+  color: #e0e0e0;
+}
+
+.modoOscuro .cookie-btn.secondary {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+
+.modoOscuro .cookie-customize {
+  border-top-color: #444;
+}
 /* ================== RESPONSIVE GENERAL (tu código existente) ================== */
 @media (max-width: 1200px) {
   header, section {
