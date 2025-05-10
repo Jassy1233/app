@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - Modo oscuro ✅
 - Formulario
     - Enviar correo con los datos del cliente ✅
@@ -6,4 +7,14 @@
 - Nueva paleta de colores
 - Relleno
 - Enseñar vista de cliente y tutorial
+=======
+- Modo oscuro ✅
+- Formulario
+    - Enviar correo con los datos del cliente ✅
+    - Animacion cuando se envie el Formulario ✅
+    - ¿Base de datos?
+- Nueva paleta de colores
+- Relleno
+- Enseñar vista de cliente y tutorial
+>>>>>>> fa8ec1b21dcf5b91f0cb544fba58595abf0cb23b
 - En otro apartado destacar los puntos del programa
