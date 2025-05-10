@@ -25,13 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert(result.mensaje);
+        Swal.fire({
+          text: result.mensaje,
+          icon: "success",
+          confirmButtonText: '¡Gracias!'
+        })
         form.reset();
       } else {
-        alert(result.mensaje || 'Error al enviar el mensaje');
+        Swal.fire({
+          text: result.mensaje,
+          icon: "error",
+        })
       }
     } catch (err) {
-      alert('Error de red. Inténtalo de nuevo.');
+      Swal.fire({
+        text: 'Error de red, intentalo de nuevo mas tarde',
+        icon: "question",
+
+      })
       console.error(err);
     }
   });
