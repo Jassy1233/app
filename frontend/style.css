@@ -606,194 +606,315 @@ section button.btn {
   padding-right: 40px; 
 }
 
-@media (max-width: 1200px) {
-    header, section {
-        padding: 3rem 1.5rem;
-    }
-    
-    .hero-text h1 {
-        font-size: 3.5rem;
-    }
-    
-    .tablet-mockup {
-        height: 350px;
-        margin-left: 1rem;
-    }
+.footer {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 60px 20px 30px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
 }
 
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-column h4 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #111;
+}
+
+.footer-contact p, .footer-contact a {
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #111;
+}
+
+.footer-social a {
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Modo oscuro para footer */
+.modoOscuro .footer {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.modoOscuro .footer-column h4,
+.modoOscuro .footer-column ul li a,
+.modoOscuro .footer-contact p,
+.modoOscuro .footer-contact a {
+  color: #f0f0f0;
+}
+
+.modoOscuro .footer-column ul li a:hover,
+.modoOscuro .footer-contact a:hover {
+  color: #fff;
+}
+
+.modoOscuro .footer-social img {
+  filter: brightness(0) invert(0.8);
+}
+
+/* ================== MEDIA QUERIES FOOTER ================== */
 @media (max-width: 992px) {
-    :root {
-        font-size: 15px;
-    }
-    
-    .nav-container {
-        padding: 0 1.5rem;
-    }
-    
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 4rem;
-    }
-    
-    .tablet-mockup {
-        height: 300px;
-        margin: 2rem auto 0;
-        border-width: 14px;
-    }
-    
-    .image-placeholder {
-        width: 80%;
-        margin: 0 auto;
-    }
+  .footer-links {
+    gap: 30px;
+  }
+  
+  .footer-container {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s;
-    }
-    
-    .nav-links.active {
-        max-height: 400px;
-        padding: 1rem 0;
-    }
-    
-    .nav-links li {
-        padding: 1rem;
-    }
-    
-    .hero-text h1 {
-        font-size: 2.5rem;
-        white-space: normal;
-        border-right: none;
-    }
-    
-    .testimonial {
-        flex: 0 0 280px;
-    }
-    
-    .indicador {
-        font-size: 30px;
-        margin-bottom: 50px;
-        z-index: 500;
-    }
-
-    /* Sección 1 - Mobile */
-    #sec1 .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    #sec1 .image-placeholder {
-        order: -1;
-        margin: 2rem 0;
-        width: 100%;
-        height: 250px;
-    }
-}
-
-@media (max-width: 576px) {
-    :root {
-        font-size: 14px;
-    }
-    
-    header, section {
-        padding: 2rem 1rem;
-        height: auto;
-        min-height: 100vh;
-    }
-    
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    
-    .tablet-mockup {
-        height: 250px;
-        border-width: 12px;
-        border-radius: 20px;
-    }
-    
-    .testimonial {
-        flex: 0 0 260px;
-    }
-    
-    /* Ajuste final Sección 1 */
-    #sec1 .image-placeholder {
-        height: 200px;
-    }
-    
-    #sec1 p {
-        font-size: 1.2rem;
-        max-width: 80ch;
-        margin: 0 auto;
-    }
-}
-
-/* =============================================
-   CORRECCIONES FINALES - SECCIÓN 1 Y BOTÓN
-   ============================================= */
-#sec1 .container {
-    display: flex;
+  .footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-container {
     flex-direction: column;
-    width: 100%;
-}
-
-#sec1 .content {
-    width: 100%;
-    max-width: 800px;
-    order: 2;
-    text-align: center;
-}
-
-#sec2 .btn {
-    display: block;
-    margin: 2rem auto;
-    width: max-content;
-}
-
-@media (min-width: 768px) {
-    #sec1 .container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-    
-    #sec1 .content {
-        width: 50%;
-        order: 1;
-        padding-right: 2rem;
-        text-align: left;
-    }
-    
-    #sec1 .image-placeholder {
-        width: 45%;
-        order: 2;
-        margin: 0;
-        height: 350px;
-    }
+    gap: 30px;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-column {
+    flex: 1 0 45%;
+    margin-bottom: 20px;
+  }
+  
+  .footer-social {
+    margin-top: 20px;
+  }
+  
+  .footer-social img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .footer-bottom {
+    margin-top: 30px;
+  }
 }
 
 @media (max-width: 576px) {
-    #sec2 .btn {
-        width: 100%;
-        max-width: 300px;
-        padding: 1rem;
-    }
+  .footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .footer-column {
+    flex: 1 0 100%;
+  }
+  
+  .footer-links {
+    gap: 15px;
+    flex-direction: column;
+  }
+  
+  .footer-social img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
 }
 
+/* ================== RESPONSIVE GENERAL (tu código existente) ================== */
+@media (max-width: 1200px) {
+  header, section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+  
+  .tablet-mockup {
+    height: 350px;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    font-size: 15px;
+  }
+  
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+  
+  .tablet-mockup {
+    height: 300px;
+    margin: 2rem auto 0;
+    border-width: 14px;
+  }
+  
+  .image-placeholder {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  
+  .nav-links.active {
+    max-height: 400px;
+    padding: 1rem 0;
+  }
+  
+  .nav-links li {
+    padding: 1rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+    border-right: none;
+  }
+  
+  .testimonial {
+    flex: 0 0 280px;
+  }
+  
+  .indicador {
+    font-size: 30px;
+    margin-bottom: 50px;
+    z-index: 500;
+  }
+
+  /* Sección 1 - Mobile */
+  #sec1 .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #sec1 .image-placeholder {
+    order: -1;
+    margin: 2rem 0;
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  header, section {
+    padding: 2rem 1rem;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .tablet-mockup {
+    height: 250px;
+    border-width: 12px;
+    border-radius: 20px;
+  }
+  
+  .testimonial {
+    flex: 0 0 260px;
+  }
+  
+  /* Ajuste final Sección 1 */
+  #sec1 .image-placeholder {
+    height: 200px;
+  }
+  
+  #sec1 p {
+    font-size: 1.2rem;
+    max-width: 80ch;
+    margin: 0 auto;
+  }
+}
 /* =============================================
    CORRECCIONES GLOBALES
    ============================================= */
