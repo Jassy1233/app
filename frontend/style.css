@@ -368,43 +368,6 @@ header {
     color: #333;
 }
 
-.rotator-container {
-  display: inline-flex;
-  align-items: center;
-  height: 1.5em; /* Ajusta según tu línea de texto */
-}
-
-.rotator-wrapper {
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  margin-left: 4px; /* Espacio después de "para" */
-  vertical-align: top;
-}
-
-.rotating-words {
-  display: inline-block;
-  position: relative;
-  height: 100%;
-}
-
-.word {
-  position: absolute;
-  color: rgb(197, 136, 22);
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(10px);
-  white-space: nowrap;
-}
-
-.word.active {
-  position: relative;
-  opacity: 1;
-  transform: translateY(0);
-  display: inline-block;
-}
 /* Responsive */
 /* Tablet Pequeña (768px) */
 @media (max-width: 992px) {
