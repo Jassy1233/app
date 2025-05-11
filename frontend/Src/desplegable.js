@@ -17,16 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     video.pause();
     
-    // Agregar timestamp para evitar caché
     const newSource = `${videoSources[index]}?t=${Date.now()}`;
     
-    // Reiniciar el video
     video.currentTime = 0;
     
-    // Cambiar la fuente
     video.src = newSource;
     
-    // Usar canplaythrough en lugar de loadeddata
     video.addEventListener('canplaythrough', () => {
       video.play().catch(err => console.error("Error al reproducir:", err));
     }, { once: true });
