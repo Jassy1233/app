@@ -33,7 +33,7 @@ app.post('/enviar', async (req, res) => {
         await transporter.sendMail({
             from: email,
             to: 'meseguer318@gmail.com',
-            subject: `Nuevo cliente reservas : ${nombre}`,
+            subject: `Nuevo cliente reservas : ${local}`,
             text: `Nombre: ${nombre} \n Nombre del local ${local}\n Email: ${email} \n Telefono ${telefono} \n Tipo de negocio: ${negocio} \n Observaciones: ${observaciones}`
         });
 

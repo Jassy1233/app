@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inforlistin - Software de Reservas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./IMG/image-removebg-preview (3).png" type="image/x-icon">
     <!--Archivos JS-->>
     <script src="./Src/main.js" defer></script>
     <script src="./Src/bars.js" defer></script>
     <script src="./Src/slide.js" defer></script>
     <script src="./Src/cockies.js" defer></script>
     <script src="./Src/word.js" defer></script>
+    <script src="./Src/desplegable.js" defer></script>
     <!--<script src="./Src/type.js" defer></script>-->
     <script src="./Src/form.js" defer></script>
     <!--Librerias-->
@@ -38,8 +40,20 @@
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#sec1">Demo</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
+
                     <li><button id="oscuro"><i class="fas fa-moon"></i></button></li>
                 </ul>
+                <div class="video-dropdown-container">
+                    <button id="videoToggleBtn" class="video-btn">Demostracion <i class="fas fa-play"></i></button>
+
+                    <div id="videoOverlay" class="video-overlay">
+                        <div class="video-popup">
+                            <video id="mainVideo" src="./IMG/tablet.mp4" controls autoplay></video>
+                            <button id="closeVideoBtn" class="close-btn">&times;</button>
+                            <button id="nextVideoBtn" class="next-video-btn">Siguiente Video</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
 
@@ -50,7 +64,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 id="text">App Reservas</h1>
-                    <p id="texto" class="rotator-container">Software de reservas para restaurantes, cafeterias y bares</p>
+                    <p id="texto">Software de reservas para restaurantes, cafeterias y bares</p>
                 </div>
 
                 <!-- Contenedor principal del dispositivo -->
@@ -79,13 +93,16 @@
 
         <!--Seccion 1-->
         <section id="sec1">
-            <h2 id="texto">¿Por qué elegirnos?</h2>
+            <div class="section-header">
+                <h2 id="texto">¿Por qué elegirnos?</h2>
+            </div>
+
             <div class="container">
-                <div class="content">
+                <div class="content benefits-content">
                     <p class="slide">✔️ Ahorra tiempo y evita errores manuales</p>
                     <p class="slide">✔️ Control total de tus reservas</p>
                     <p class="slide">✔️ Interfaz intuitiva, sin curva de aprendizaje</p>
-                    <p class="slide">✔️ ¿No te gustaria saber la opinion de tus clientes?</p>
+                    <p class="slide">✔️ ¿No te gustaría saber la opinión de tus clientes?</p>
                 </div>
                 <div class="image-placeholder">
                     <div class="bar" id="bar1" data-value="80"></div>
@@ -94,7 +111,8 @@
                     <div class="bar" id="bar4" data-value="70"></div>
                 </div>
             </div>
-            <button class="btn" id="scrollBtn2">Sigue informándote 🔎</button>
+            <button class="btn" id="scrollBtn2">¿Sigues con dudas?</button>
+
         </section>
 
         <!--Seccion 2-->
