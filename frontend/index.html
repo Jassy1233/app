@@ -38,6 +38,7 @@
     <script src="./Src/cockies.js" defer></script>
     <script src="./Src/word.js" defer></script>
     <script src="./Src/desplegable.js" defer></script>
+    <script src="./Src/contador.js" defer></script>
     <!--<script src="./Src/type.js" defer></script>-->
     <script src="./Src/form.js" defer></script>
 
@@ -133,9 +134,33 @@
                     <div class="bar" id="bar4" data-value="70"></div>
                 </div>
             </div>
-            <button class="btn" id="scrollBtn2">¿Sigues con dudas?</button>
 
         </section>
+
+<section id="clientes-satisfechos" class="contador-con-imagen">
+    <div class="contenedor-flex">
+        <!-- Columna izquierda (imagen/video) -->
+        <div class="columna-imagen">
+             <video autoplay muted loop>
+                <source src="./IMG/doble.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Columna derecha (contenido actual + mejora) -->
+        <div class="columna-contenido">
+            <h2 id="texto">Ya confían en nosotros</h2>
+            
+            <div class="contador-destacado">
+                <span id="contador">120</span>+
+                <p id="texto">Restaurantes, bares y cafeterías</p>
+            </div>
+
+            <button href="#contacto" class="btn" id="scrollBtn3">
+                Únete a ellos 
+            </button>
+        </div>
+    </div>
+</section>
 
         <!--Seccion 2-->
         <section id="sec2">
@@ -296,7 +321,7 @@
         </section>
     </div>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-container">
             <div class="footer-links">
                 <div class="footer-column">

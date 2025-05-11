@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Scroll de la seccion 2 :
-    document.getElementById('scrollBtn2').addEventListener('click', function () {
-        document.getElementById('sec2').scrollIntoView({ behavior: 'smooth' });
-    });
+    // document.getElementById('scrollBtn2').addEventListener('click', function () {
+    //     document.getElementById('sec2').scrollIntoView({ behavior: 'smooth' });
+    //  });
 
     // Scroll de la seccion 3 :
     document.getElementById('scrollBtn3').addEventListener('click', function () {

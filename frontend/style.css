@@ -762,6 +762,172 @@ section button.btn {
   margin: 2rem auto;
 }
 
+/* Contador */
+.contador-section {
+  text-align: center; /* Centra todo el contenido */
+  padding: 2rem 0; /* Añade espacio arriba y abajo */
+}
+
+
+.contador-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.contador-item {
+  text-align: center;
+}
+
+.contador-item h3 {
+  font-size: 5rem; /* Tamaño grande para el número */
+  font-weight: bold;
+  color: #333;
+  margin: 0; /* Elimina márgenes por defecto */
+  line-height: 1; /* Ajusta el interlineado */
+}
+
+.contador-item p {
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para modo oscuro */
+.modoOscuro .contador-item h3 {
+  color: #f0f0f0;
+}
+
+.modoOscuro .contador-item p {
+  color: #ccc;
+}
+
+.contador-con-imagen {
+    padding: 4rem 0;
+}
+
+.contenedor-flex {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.columna-imagen {
+    flex: 1;
+    border: 18px solid #333;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.columna-imagen img, 
+.columna-imagen video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.columna-contenido {
+    flex: 1;
+    text-align: center;
+}
+
+.contador-destacado {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 1rem 0;
+    line-height: 1;
+}
+
+.contador-destacado p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .contenedor-flex {
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  .columna-imagen {
+    border-width: 14px;
+  }
+  
+  .contador-item h3,
+  .contador-destacado {
+    font-size: 4rem;
+  }
+  
+  .contador-item p,
+  .contador-destacado p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .columna-imagen {
+    order: 2;
+    width: 80%;
+    margin-top: 2rem;
+    border-width: 12px;
+  }
+  
+  .columna-contenido {
+    order: 1;
+  }
+  
+  .contador-section,
+  .contador-con-imagen {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contador-item h3,
+  .contador-destacado {
+    font-size: 3rem;
+  }
+  
+  .contador-item p,
+  .contador-destacado p {
+    font-size: 1.1rem;
+  }
+  
+  .columna-imagen {
+    width: 90%;
+    border-width: 8px;
+    border-radius: 20px;
+  }
+  
+  .contador-con-imagen {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Modo oscuro responsive */
+@media (max-width: 768px) {
+  .modoOscuro .contador-item h3,
+  .modoOscuro .contador-destacado {
+    color: #f0f0f0;
+  }
+  
+  .modoOscuro .contador-item p,
+  .modoOscuro .contador-destacado p {
+    color: #ccc;
+  }
+}
+
 /*Testimonios*/
 .testimonial-section {
   padding: 4rem 1rem;
