@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('modoOscuro', document.body.classList.contains('modoOscuro'));
     });
-
+    
     if (localStorage.getItem('modoOscuro') === 'true') {
         document.body.classList.add('modoOscuro');
         document.querySelector('nav').classList.add('modoOscuro');

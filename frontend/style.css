@@ -762,6 +762,157 @@ section button.btn {
   margin: 2rem auto;
 }
 
+/*Seccion 2 - Marketing*/
+
+/* ===== ESTILOS BASE ===== */
+#sec2 {
+  padding: 4rem 0; /* Mantenemos el padding vertical */
+}
+
+#sec2 .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#sec2 h2 {
+  font-size: 2.5rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+#sec2 h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B00, #FF8E53);
+}
+
+#sec2 .container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+/* Lista de beneficios */
+#sec2 .benefits-content {
+  flex: 1;
+}
+
+#sec2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sec2 .slide {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 1.8rem;
+  padding-left: 2.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+#sec2 .slide::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FF6B00;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+/* ===== MODO OSCURO ===== */
+.modoOscuro #sec2 h2 {
+  color: #f0f0f0;
+}
+
+.modoOscuro #sec2 .slide {
+  color: #e0e0e0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  #sec2 .container {
+    gap: 3rem;
+  }
+  
+  #sec2 .slide {
+    font-size: 1.3rem;
+    padding-left: 2.2rem;
+  }
+  
+  #sec2 .tablet-mockup {
+    border-width: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  #sec2 .container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  
+  #sec2 .tablet-mockup {
+    width: 70%;
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  
+  #sec2 h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #sec2 {
+    padding: 3rem 0;
+  }
+  
+  #sec2 .tablet-mockup {
+    width: 85%;
+    border-width: 10px;
+    border-radius: 15px;
+  }
+  
+  #sec2 .slide {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  #sec2 h2 {
+    font-size: 1.8rem;
+  }
+  
+  #sec2 .tablet-mockup {
+    width: 95%;
+    border-width: 8px;
+  }
+  
+  #sec2 .slide {
+    font-size: 1.1rem;
+    padding-left: 1.8rem;
+  }
+  
+  #sec2 .slide::before {
+    font-size: 1.5rem;
+  }
+}
+
 /* Contador */
 .contador-section {
   text-align: center; /* Centra todo el contenido */
